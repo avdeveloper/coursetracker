@@ -1,0 +1,13 @@
+{
+  "name": "coursetracker",
+  "description": "Track your courses to make sure you'll graduate on time",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "connect": "2.7.3"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}
