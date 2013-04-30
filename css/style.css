@@ -1,0 +1,98 @@
+body {
+  padding-top: 70px;
+}
+
+/* ~hero */
+.hero-unit {
+  color: white;
+  background: black; /* TODO remove */
+}
+
+.hero-unit h2 {
+  text-transform: capitalize;
+}
+
+.hero-unit span {
+  display: block;
+}
+
+.hero-unit em {
+  color: rgb(164,255,89);
+  font-style: normal;
+}
+
+/* ~steps */
+section[id^=step] > p {
+  width: 70%;
+}
+
+h3 {
+  color: #006dcc;
+}
+
+h3 span {
+  color: #ccc;
+}
+
+/* ~course listing */
+#courseListing > div {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  -o-columns: 2;
+}
+
+#courseListing> div > div {
+  display: table;
+  width: 80%;
+  column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -o-column-break-inside: avoid;
+}
+
+#courseListing ul {
+  margin-left: 0;
+  list-style: none;
+}
+
+#courseListing li {
+  line-height: 2em;
+  border-bottom: thin solid #e0e0e0;
+}
+
+#courseListing li span:last-child {
+  color: #999;
+}
+
+#courseListing p {
+  margin-bottom: 0;
+}
+
+#courseListing input[type=checkbox] {
+  margin-top: 0;
+}
+
+#courseListing form {
+  margin-bottom: 0;
+  padding: 1em;
+}
+
+/* ~footer */
+footer {
+  margin: 2em 0;
+  padding: 1em 0;
+  text-align: center;
+  border-top: thin solid #e0e0e0;
+}
+
+footer p {
+  color: #999;
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 976px) {
+  body {
+    padding-top: 0px;
+  }
+}
