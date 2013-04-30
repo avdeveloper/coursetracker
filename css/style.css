@@ -41,6 +41,10 @@ h3 span {
 }
 
 /* ~course listing */
+#courseListing {
+  font-size: 0.9em;
+}
+
 #courseListing > div {
   columns: 2;
   -webkit-columns: 2;
