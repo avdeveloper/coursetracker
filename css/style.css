@@ -4,26 +4,31 @@ body {
 
 /* ~hero */
 .hero-unit {
+  background: url(../img/checklist.jpg) no-repeat center center;
+  background-size: 100%;
+  border: thin solid #999;
+}
+
+.hero-unit strong {
+  color: rgb(144, 234, 241);
+}
+
+.hero-unit h2,
+.hero-unit p {
+  padding: 0.5em;
   color: white;
-  background: black; /* TODO remove */
+  background: rgba(0,0,0,0.3);
 }
 
 .hero-unit h2 {
+  display: inline-block;
   text-transform: capitalize;
 }
 
-.hero-unit span {
-  display: block;
-}
-
-.hero-unit em {
-  color: rgb(164,255,89);
-  font-style: normal;
-}
-
 .hero-unit p {
+  width: 50%;
   font-size: 0.9em;
-  width: 40%;
+  text-align: justify;
   line-height: 1.2em;
 }
 
@@ -92,12 +97,14 @@ h3 span {
 footer {
   margin: 2em 0;
   padding: 1em 0;
-  text-align: center;
+  padding-bottom: 15em;
   border-top: thin solid #e0e0e0;
 }
 
-footer p {
+footer > p {
+  margin-bottom: 0;
   color: #999;
+  text-align: center;
   font-size: 0.9em;
 }
 

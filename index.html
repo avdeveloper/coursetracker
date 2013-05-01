@@ -12,7 +12,7 @@
 </header>
 <div class="container-fluid">
   <div class="hero-unit">
-    <h2>track your courses, graduate on time</h2>
+    <h2><strong>track</strong> your courses, <strong>graduate</strong> on time</h2>
     <p>CourseTracker is much less of a hassle than printing out your course checklist and crossing them out</p>
     <a href="#step1" class="btn btn-primary btn-large">Get Started</a>
   </div>
@@ -32,7 +32,7 @@
         <h4 data-bind="text: department">loading...</h4>
         <ul data-bind="foreach: courses">
           <li>
-            <input type="checkbox" data-bind="attr: { value: initials + ' ' + courseNumber },
+            <input type="checkbox" data-bind="attr: { value: JSON.stringify($data) },
                                               checked: $root.coursesTaken">
             <strong data-bind="text: initials + ' ' + courseNumber"></strong>
             <span data-bind="text: name"></span>
@@ -45,15 +45,18 @@
     <p><strong>What's your name?</strong> Fill out the following form so you can track your progress at a later time.</p>
     <form>
       <p>
-        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Your Name" data-bind="value: userName" required>
       </p>
       <p>
-        <input type="email" placeholder="your-email@example.com">
+        <input type="email" placeholder="your-email@example.com" data-bind="value: userEmail" required>
+      </p>
+      <p>
+        <input type="password" placeholder="secret password" data-bind="value: userPassword" required>
       </p>
     </form>
-    <button class="btn btn-primary btn-large">Save My Progress</button>
+    <button class="btn btn-primary btn-large" data-bind="click: saveUser">Save My Progress</button>
   </section>
-  <footer>
+  <footer class="row-fluid">
     <p>Copyright &copy;2013 CourseTracker. All rights reserved.</p>
   </footer>
 </div>

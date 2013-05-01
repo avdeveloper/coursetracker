@@ -3,6 +3,32 @@ define([], function () {
     var
 
     /**
+     * Trim off the fat that bloats a Parse object
+     * @param (Object) parseObject An object whose Parse methods need to be trimmed off
+     * @param (Object) only return the attributes and the object id
+     */
+    trim = function (parseObject) {
+      if (!parseObject) return {};
+      var returnable = parseObject.attributes;
+      returnable.id = parseObject.id;
+      return returnable;
+    },
+
+    /**
+     * Convert an array of courses taken to an object which includes a GPA value
+     * @param ([String]) coursesTaken An array of courses the user has checked and marked as complete
+     * @return (Object) an object that contains an uninitialized GPA
+     */
+    objectifyCoursesTaken = function (coursesTaken) {
+      return coursesTaken.map(function (course) {
+        return {
+          gpa: -1,
+          course: JSON.parse(course)
+        };
+      });
+    },
+
+    /**
      * Convert an object to an array whose value includes the index and data contained within
      * @param (Object) object The object that needs to be converted to an array
      * @return ([Object]) An array of tuples
@@ -86,7 +112,9 @@ define([], function () {
   
     return {
       updateActiveMajor: updateActiveMajor,
-      getRequiredCourses: getRequiredCourses
+      getRequiredCourses: getRequiredCourses,
+      objectifyCoursesTaken: objectifyCoursesTaken,
+      trim: trim
     }; // public API
   }; // ShowMajorHelper
 }); // definition
