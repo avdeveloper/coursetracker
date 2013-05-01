@@ -17,16 +17,16 @@
     <a href="#step1" class="btn btn-primary btn-large">Get Started</a>
   </div>
   <section id="step1">
-    <h3>Step 1 <span>of 3</span></h3>
-    <p><strong>What's your major?</strong> Before you can track the courses you've taken, please specify which major you've chosen to pursue at this University.</p>
+    <h3>What's your major?</h3>
+    <p>Before you can track the courses you've taken, please specify which major you've chosen to pursue at this University.</p>
     <div class="input-append">
       <input class="input-xxlarge" type="text" placeholder="Computer Science" data-bind="value: keywords">
         <a class="btn" href="#step2" data-bind="click: findMajor">Find Major</a>
     </div>
   </section>
-  <section id="courseListing" data-bind="visible: major">
-    <h3>Step 2 <span>of 3</span></h3>
-    <p><strong>What courses are you taking?</strong> Check off the courses you have taken so far at the University.</p>
+  <section id="courseListing" class="catalog" data-bind="visible: major">
+    <h3>What courses are you taking?</h3>
+    <p><strong></strong> Check off the courses you have taken so far at the University.</p>
     <div data-bind="foreach: requiredCourses">
       <div>
         <h4 data-bind="text: department">loading...</h4>
@@ -41,8 +41,8 @@
         </ul>
       </div>
     </div>
-    <h3>Step 3 <span>of 3</span></h3>
-    <p><strong>What's your name?</strong> Fill out the following form so you can track your progress at a later time.</p>
+    <h3>Let's get in touch</h3>
+    <p>Fill out the following form so you can track your progress at a later time.</p>
     <form>
       <p>
         <input type="text" placeholder="Your Name" data-bind="value: userName" required>

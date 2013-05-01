@@ -21,7 +21,9 @@ define(["knockout", "ShowMajorHelper", "jquery-ui"], function (ko, ShowMajorHelp
      * Add the user
      */
     self.saveUser = function () {
-      console.log(self.user());
+      helper.saveUser(self.user(), function (redirectURI) {
+        window.location = redirectURI;
+      });
     },
 
     /**
@@ -36,7 +38,7 @@ define(["knockout", "ShowMajorHelper", "jquery-ui"], function (ko, ShowMajorHelp
      */
     self.user = ko.computed(function () {
       return {
-        name: self.userName(),
+        username: self.userName(),
         email: self.userEmail(),
         password: self.userPassword(),
         major: helper.trim(self.major()),

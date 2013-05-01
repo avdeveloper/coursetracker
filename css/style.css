@@ -41,56 +41,74 @@ h3 {
   color: #006dcc;
 }
 
-h3 span {
-  color: #ccc;
+h3 + p {
+  line-height: 1.5em;
 }
 
 /* ~course listing */
-#courseListing {
+.catalog {
   font-size: 0.9em;
 }
 
-#courseListing > div {
+.catalog > div {
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
   -o-columns: 2;
 }
 
-#courseListing> div > div {
+.catalog > div > div {
   display: table;
-  width: 80%;
+  width: 100%;
   column-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   -o-column-break-inside: avoid;
 }
 
-#courseListing ul {
+.catalog ul {
   margin-left: 0;
   list-style: none;
 }
 
-#courseListing li {
+.catalog li {
   line-height: 2em;
   border-bottom: thin solid #e0e0e0;
 }
 
-#courseListing li span:last-child {
+.catalog li span:last-child {
   color: #999;
 }
 
-#courseListing p {
+.catalog p {
   margin-bottom: 0;
 }
 
-#courseListing input[type=checkbox] {
+.catalog input[type=checkbox] {
   margin-top: 0;
 }
 
-#courseListing form {
+.catalog form {
   margin-bottom: 0;
   padding: 1em;
+}
+
+/* ~aside */
+aside h2 {
+  color: #999;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.credits {
+  margin-top: 0.75em;
+  color: #ccc;
+  font-size: 2em;
+}
+
+.credits span {
+  color: #333;
+  font-size: 3em;
 }
 
 /* ~footer */

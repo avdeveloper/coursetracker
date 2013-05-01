@@ -1,6 +1,18 @@
-define([], function () {
+define(["UserModel"], function (UserModel) {
   return function ShowMajorHelper (self) {
     var
+
+    // ~private properties
+    model = new UserModel(),
+
+    /**
+     * Save a user to the database
+     * @param (Object) user The user data to save
+     * @param (Function*) next The function to call when the user is saved
+     */
+    saveUser = function (user, next) {
+      model.save(user, next);
+    },
 
     /**
      * Trim off the fat that bloats a Parse object
@@ -114,7 +126,8 @@ define([], function () {
       updateActiveMajor: updateActiveMajor,
       getRequiredCourses: getRequiredCourses,
       objectifyCoursesTaken: objectifyCoursesTaken,
-      trim: trim
+      trim: trim,
+      saveUser: saveUser
     }; // public API
   }; // ShowMajorHelper
 }); // definition

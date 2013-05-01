@@ -1,0 +1,42 @@
+<!doctype html>
+<title>CourseTracker</title>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="#home">CourseTracker</a>
+      <a class="btn btn-primary pull-right" href="#logout">Logout</a>
+    </div>
+  </div>
+</header>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <section id="content" class="catalog span8" data-bind="with: user">
+      <h1>Hi, <span data-bind="text: username"></span></h1>
+      <h3>Your courses as a <span data-bind="text: major.name"></span> student</h3>
+      <div data-bind="foreach: major.requiredCourses"> 
+        <div>
+          <h4 data-bind="text: department"></h4>
+          <ul data-bind="foreach: courses">
+            <li>
+              <input type="checkbox" data-bind="checked: $root.isCompleted($data)">
+              <strong data-bind="text: initials + ' ' + courseNumber">CS 394</strong>
+              <span data-bind="text: name">Software Engineering Class</span>
+              <span class="pull-right" data-bind="text: credits + ' credits'">3 credits</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-primary pull-right">Save Progress</button>
+    </section>
+    <aside class="span4">
+      <h2>Your Credits</h2>
+      <p class="credits"><span data-bind="text: credits"></span>/128</p>
+    </aside>
+  </div>
+  <footer class="row-fluid">
+    <p>Copyright &copy;2013 CourseTracker. All rights reserved.</p>
+  </footer>
+</div>
+<script type="text/javascript" data-main="js/home.js" src="//cdnjs.cloudflare.com/ajax/libs/require-jquery/0.25.0/require-jquery.min.js"></script>
